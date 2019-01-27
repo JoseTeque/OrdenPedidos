@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_bg"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/IdPhone"
+            android:hint="Numero de celular"
+            android:textColorHint="@android:color/white"
+            android:text="940540453"
+            android:textColor="@android:color/white"
+            android:drawableEnd="@drawable/ic_phone_black_24dp"
+            android:textSize="34sp"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+            />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/IdNombre"
+            android:hint="Nombre"
+            android:textColorHint="@android:color/white"
+            android:text="Jose guerra"
+            android:textColor="@android:color/white"
+            android:drawableEnd="@drawable/ic_person_add_black_24dp"
+            android:textSize="34sp"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="20"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+            />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/IdPassword"
+            android:hint="Password"
+            android:textColorHint="@android:color/white"
+            android:text="1234"
+            android:textColor="@android:color/white"
+            android:drawableEnd="@drawable/ic_https_black_24dp"
+            android:textSize="34sp"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/IdSignUpp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_green_light"
+        />
+</RelativeLayout>
