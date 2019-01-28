@@ -1,7 +1,9 @@
 package joseguerra.ordereat;
 
 import android.app.ProgressDialog;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.Objects;
+
 import joseguerra.ordereat.modelo.User;
+
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -46,16 +51,18 @@ public class SignUpActivity extends AppCompatActivity {
                 dialog.show();
 
                 myRef.addValueEventListener(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                   // chequear si existe el numero de cel en la base de datos
+                        // chequear si existe el numero de cel en la base de datos
 
-                        if (dataSnapshot.child(edtxPhone.getText().toString()).exists()){
+
+                        if (dataSnapshot.child(Objects.requireNonNull(edtxPhone.getText()).toString()).exists()){
                             Toast.makeText(SignUpActivity.this,"El numero se encuentra registrado en la base",Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }else {
                             dialog.dismiss();
-                            User user= new User(edtxName.getText().toString(),edtxPassord.getText().toString());
+                            User user= new User(Objects.requireNonNull(edtxName.getText()).toString(), Objects.requireNonNull(edtxPassord.getText()).toString());
                             myRef.child(edtxPhone.getText().toString()).setValue(user);
                             Toast.makeText(SignUpActivity.this,"Usuario registrado con exito",Toast.LENGTH_SHORT).show();
                             finish();
@@ -73,4 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
 }
+
+

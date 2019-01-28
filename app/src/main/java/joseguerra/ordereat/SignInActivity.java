@@ -1,7 +1,9 @@
 package joseguerra.ordereat;
 
 import android.app.ProgressDialog;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.Objects;
+
 import joseguerra.ordereat.modelo.User;
 
 public class SignInActivity extends AppCompatActivity {
@@ -29,6 +33,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         edtxphone=findViewById(R.id.IdPhone);
+
         edtxPassword=findViewById(R.id.IdPassword);
 
         btnSign=findViewById(R.id.IdSignIn);
@@ -47,15 +52,17 @@ public class SignInActivity extends AppCompatActivity {
                 dialog.show();
 
                 myRef.addValueEventListener(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         //chequear si el usuario no existe en el database
 
-                          if (dataSnapshot.child(edtxphone.getText().toString()).exists()) {
+                          if (dataSnapshot.child(Objects.requireNonNull(edtxphone.getText()).toString()).exists()) {
                               // get user informacion de la base.
                               User user = dataSnapshot.child(edtxphone.getText().toString()).getValue(User.class);
-                              if (user.getPassword().equals(edtxPassword.getText().toString())) {
+                              assert user != null;
+                              if (user.getPassword().equals(Objects.requireNonNull(edtxPassword.getText()).toString())) {
                                   Toast.makeText(SignInActivity.this, "Sign In succes", Toast.LENGTH_SHORT).show();
                                   dialog.dismiss();
 

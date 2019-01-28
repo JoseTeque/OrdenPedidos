@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSignUp= (Button)findViewById(R.id.IdSignUp);
-        btnSignIn= (Button)findViewById(R.id.IdSignIn);
+        btnSignUp= findViewById(R.id.IdSignUp);
+        btnSignIn= findViewById(R.id.IdSignIn);
 
-        txtSlogan=(TextView)findViewById(R.id.IdTxtSlogan);
+        txtSlogan=findViewById(R.id.IdTxtSlogan);
 
         Typeface face= Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");
         txtSlogan.setTypeface(face);
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent= new Intent(MainActivity.this,SignUpActivity.class);
                 startActivity(intent);
+
 
             }
         });
