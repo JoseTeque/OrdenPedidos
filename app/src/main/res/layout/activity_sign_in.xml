@@ -18,9 +18,9 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/IdPhone"
-            android:hint="Numero de celular"
+            android:hint="@string/edtxHintPhone"
             android:textColorHint="@android:color/white"
-            android:text="940540453"
+            android:text="@string/edtxPhone"
             android:drawableEnd="@drawable/ic_phone_black_24dp"
             android:textColor="@android:color/white"
             android:textSize="34sp"
@@ -37,9 +37,9 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/IdPassword"
-            android:hint="Password"
+            android:hint="@string/edtxHintPassword"
             android:textColorHint="@android:color/white"
-            android:text="1234"
+            android:text="@string/edtxPassword"
             android:textColor="@android:color/white"
             android:drawableEnd="@drawable/ic_https_black_24dp"
             android:textSize="34sp"
@@ -54,16 +54,49 @@
 
             />
 
+      <LinearLayout
+          android:weightSum="2"
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <com.rey.material.widget.CheckBox
+              android:id="@+id/Id_CheckBox_Remember"
+              android:layout_weight="1"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              style="@style/Material.Drawable.CheckBox"
+              android:gravity="center_vertical"
+              android:text="@string/checkBoxRemember"
+              android:textColor="@android:color/white"
+              app:cbd_strokeColor="@android:color/white"
+              app:cbd_tickColor="@color/colorPrimaryDark"
+              />
+
+          <TextView
+              android:id="@+id/txtOlvidoPass"
+              android:layout_weight="1"
+              android:textColor="@android:color/white"
+              android:text="@string/Forgot_Password"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content" />
+
+
+      </LinearLayout>
+
     </LinearLayout>
 
-    <Button
+    <info.hoang8f.widget.FButton
         android:id="@+id/IdSignIn"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SIGN IN"
+        android:text="@string/btnSignIn"
         android:layout_margin="8dp"
-        android:textColor="@android:color/white"
-        android:background="@android:color/holo_red_light"
+        app:fButtonColor="@color/btnSignActivo"
+        app:shadowColor="@android:color/black"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp"
+        app:cornerRadius="4dp"
         />
 </RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="10dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="0dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/IdImagelista"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/my_bg"
+            android:scaleType="centerCrop"
+            android:layout_weight="4"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:id="@+id/IdTxtNamelistaitem"
+                android:text="@string/txtNameComida"
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="NestedWeights" />
+            <ImageView
+                android:id="@+id/IdShare"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_share_black_24dp"
+                android:tint="@color/colorAccent"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/IdFav"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite_border_black_24dp"
+                android:tint="@color/colorAccent"
+                tools:ignore="ContentDescription" />
+
+
+        </LinearLayout>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+
+               android:id="@+id/IdTxtFoodPrice"
+               android:text="@string/txtPrecioComida"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="20sp"
+               android:textStyle="bold"
+               tools:ignore="RelativeOverlap" />
+
+           <ImageView
+               android:id="@+id/IdBtn_quick_cart"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+               android:layout_marginEnd="30dp"
+               android:src="@drawable/ic_shopping_cart_black_24dp"
+               android:tint="@color/colorAccent"
+               android:layout_centerVertical="true"
+               tools:ignore="ContentDescription" />
+       </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.CardView>
